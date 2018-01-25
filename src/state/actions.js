@@ -1,7 +1,5 @@
 const GET_LOANS =  'GET_LOANS';
 const GET_LOANS_DONE = `${GET_LOANS}/DONE`;
-
-
 const ANALYZE_USER = 'ANALYZE';
 const ANALYZE_USER_DONE = `${ANALYZE_USER}/DONE`;
 
@@ -19,7 +17,7 @@ export const analyzeUser = (userid) => {
     }
 }
 
-export const ACTIONS = {
+export const actionTypes = {
     GET_LOANS,
     GET_LOANS_DONE,
     ANALYZE_USER,

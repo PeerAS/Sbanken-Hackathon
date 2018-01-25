@@ -11,8 +11,9 @@ class App extends Component {
 
   componentWillMount(){
     console.log('dette store', store.getState());
-
-    store.dispatch(getLoans("test"));
+    const unsubscribe = store.subscribe(() =>
+    console.log(store.getState())
+);
   }
   
   render() {

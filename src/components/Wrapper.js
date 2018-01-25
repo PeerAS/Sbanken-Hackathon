@@ -11,7 +11,7 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        analyze: () => dispatch(analyzeUser('tester'))
+        analyze: () => dispatch(getLoans('tester'))
     }
 }
 
@@ -21,8 +21,6 @@ class testApp extends Component {
 
     componentWillMount() {
         console.log('mount');
-
-        const test = this.props;
     }
     render()
     {
