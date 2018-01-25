@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import store from './state/store'; 
 import logo from './logo.svg';
+import Wrapper from './components';
+import ACTIONS from './state/actions';
 import './App.css';
+import { getLoans } from './state/actions';
 
 class App extends Component {
+
+  componentWillMount(){
+    console.log('dette store', store.getState());
+
+    store.dispatch(getLoans("test"));
+  }
+  
   render() {
+    
     return (
+      <Provider store={store}>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Wrapper />
       </div>
+      </Provider>
     );
   }
 }

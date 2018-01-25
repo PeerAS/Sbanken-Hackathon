@@ -1,0 +1,14 @@
+.green-button {
+    background-color: #31fcb3;
+    height: 45px;
+    width: 25%;
+}
+
+.main-wrapper {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50%;
+    padding-top: 24px;
+}
