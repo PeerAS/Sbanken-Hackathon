@@ -3,15 +3,18 @@ import { connect } from 'react-redux';
 import Analyze from './Analyze';
 import { analyzeUser, getLoans } from '../state/actions';
 
-const mapStateToProps = () => {
+const mapStateToProps = state => {
+    const { loans, analyze} = state;
+
     return {
-        loans: []
+        loans,
+        data: analyze
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        analyze: () => dispatch(getLoans('tester'))
+        analyze: () => dispatch(analyzeUser('tester'))
     }
 }
 
@@ -24,8 +27,13 @@ class testApp extends Component {
     }
     render()
     {
-        const  {analyze} = this.props;
-        return(<Analyze callback={analyze} />);
+        const  {analyze, data} = this.props;
+
+        if(data.data === undefined)
+        {
+            return(<Analyze callback={analyze} />);
+        }
+        
     }
 }
 

@@ -9,8 +9,18 @@ const loans = (state = {}, action, payload) => {
     }
 }
 
+const analyze = (state = {}, action, payload) => {
+    switch(action.type) {
+        case "ANALYZE": return { data: {
+            loans: []
+        }};
+        default: return state;
+    }
+}
+
 const reducers = combineReducers({
-    loans
+    loans,
+    analyze
 });
 
 export default reducers;
