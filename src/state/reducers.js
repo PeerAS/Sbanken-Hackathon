@@ -12,15 +12,60 @@ const loans = (state = {}, action, payload) => {
 const analyze = (state = {}, action, payload) => {
     switch(action.type) {
         case "ANALYZE": return { data: {
-            loans: []
+            loans: [
+                {
+                    icon: null,
+                    lender: 'Santander',
+                    value: 245000,
+                    type: 'CarLoan',
+                    interestRate: 20
+                },
+                {
+                    icon: null,
+                    lender: 'Bank Norwegian',
+                    value: 278450,
+                    type: 'CreditCard',
+                    interestRate: 16
+                },
+                {
+                    icon: '../../icons/dnb.png',
+                    lender: 'DnB Kreditt',
+                    value: 46000,
+                    type: 'ConsumerLoan',
+                    interestRate: 25
+                },
+                {
+                    icon: null,
+                    lender: 'Klarna AB',
+                    value: 23550,
+                    type: 'Credit',
+                    interestRate: 12
+                },
+
+            ],
+            text: `Basert på hva vi har funnet
+            på deg idag, skylder du 593.000 kr. Noe av dette ser ut til å være
+            kredittkort og forbrukslån. Scroll nedover for å se hva vi kan gjøre for at
+            du skal få litt mer å rutte med hver måned`,
+            graph: {},
+            assets: 326584
+            
         }};
+        default: return state;
+    }
+}
+
+const verify = (state = false, action) => {
+    switch (action.type) {
+        case "VERIFY_USER": return action.payload;   
         default: return state;
     }
 }
 
 const reducers = combineReducers({
     loans,
-    analyze
+    analyze,
+    verify
 });
 
 export default reducers;
