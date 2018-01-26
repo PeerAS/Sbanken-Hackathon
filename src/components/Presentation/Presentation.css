@@ -3,3 +3,8 @@
     flex-direction: column;
     overflow-y: hidden;
 }
+
+.lenderIcons {
+    max-width: 60px;
+    max-height: 60px;
+}

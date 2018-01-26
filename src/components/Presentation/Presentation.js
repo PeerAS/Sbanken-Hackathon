@@ -23,7 +23,7 @@ const Presentation = ({loans, text, name, graph, barGraph}) => {
 
             {loans.map((loan, index) => {
                 return (<tr key={index}>
-                    <td><img src={loan.icon} /></td>
+                    <td><img className="lenderIcons" src={loan.icon} /></td>
                     <td>{loan.lender}</td>
                     <td>{loan.interestRate}</td>
                     <td>{loan.value}</td>
