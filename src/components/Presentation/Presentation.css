@@ -8,7 +8,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 20px;
+}
+
+.presentationLeftM {
+    margin-left: 20px;
 }
 
 .lenderText {
@@ -29,4 +32,13 @@
 
 .description {
     display: flex;
+}
+
+.tableSection td {
+    border-bottom-color: gray;
+    border-bottom: 1pt solid lightgray; 
+}
+
+.graph {
+    width: 100%;
 }

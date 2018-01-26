@@ -4,16 +4,20 @@ import './Presentation.css';
 
 const Presentation = ({loans, text, name, graph, barGraph, callback}) => {
     return (<div className="presentation">
+        <div className="presentationLeftM">
         <h2>Hei, {name}</h2>
+        
         <span>
             {text}
         </span>
-        <div>
-            <h3>Din økonomi de siste 20 årene</h3>
+
+        </div>
+        <div class="graph">
+            <h3 className="presentationLeftM" >Din økonomi de siste 20 årene</h3>
             <iframe frameBorder={0} className="graph" src={graph} />
         </div>
-        <span className="tableSection">
-            <table>
+        <span className="tableSection presentationLeftM">
+            <table cellspacing={0}>
                 <tr>
                     <td></td>
                     <td>Kreditor</td>
@@ -31,11 +35,11 @@ const Presentation = ({loans, text, name, graph, barGraph, callback}) => {
             })}
             </table>
         </span>
-        <div>
+        <div className="presentationLeftM">
             <img src={barGraph} />
         </div>
 
-        <button className="green-button" onClick={()=>{callback()}} >Vis meg mer</button>
+        <button className="presentationLeftM green-button" onClick={()=>{callback()}} >Vis meg mer</button>
         </div>);
 }
 
