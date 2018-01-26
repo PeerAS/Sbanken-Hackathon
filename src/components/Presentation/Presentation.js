@@ -1,11 +1,17 @@
 import React from 'react';
+import dnb from './dnb.png';
+import './Presentation.css';
 
-const Presentation = ({loans, text, name}) => {
+const Presentation = ({loans, text, name, graph, barGraph}) => {
     return (<div>
         <h2>Hei, {name}</h2>
         <span>
             {text}
         </span>
+        <div className="graph">
+            <h3>Din økonomi de siste 20 årene</h3>
+            <img src={graph} />
+        </div>
         <span>
             <table>
                 <tr>
@@ -17,7 +23,7 @@ const Presentation = ({loans, text, name}) => {
 
             {loans.map((loan, index) => {
                 return (<tr key={index}>
-                    <td><img src="~/icons/dnb.png" /></td>
+                    <td><img src={loan.icon} /></td>
                     <td>{loan.lender}</td>
                     <td>{loan.interestRate}</td>
                     <td>{loan.value}</td>
@@ -25,6 +31,9 @@ const Presentation = ({loans, text, name}) => {
             })}
             </table>
         </span>
+        <div>
+            <img src={barGraph} />
+        </div>
         </div>);
 }
 

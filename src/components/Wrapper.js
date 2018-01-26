@@ -41,7 +41,10 @@ class testApp extends Component {
             return(<Verification verify={verify} />);
         }
         else  {
-            return(<Presentation loans={data.data.loans} text={data.data.text} />)
+            return(<Presentation loans={data.data.loans} 
+                text={data.data.text} 
+                graph={data.data.graph} 
+                barGraph={data.data.barChart}/>)
         }
 
         return(<div>You did it</div>);

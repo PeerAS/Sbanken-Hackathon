@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux';
 import { actionTypes } from './actions';
+import dnb from './icons/dnb.png';
+import klarna from './icons/klarna.png';
+import santander from './icons/santander.png';
+import bankNorwegian from './icons/bankNorwegian.png';
+import chart from './chart.png';
+import barChart from './barChart.png';
 
 
 const loans = (state = {}, action, payload) => {
@@ -14,28 +20,28 @@ const analyze = (state = {}, action, payload) => {
         case "ANALYZE": return { data: {
             loans: [
                 {
-                    icon: null,
+                    icon: santander,
                     lender: 'Santander',
                     value: 245000,
                     type: 'CarLoan',
                     interestRate: 20
                 },
                 {
-                    icon: null,
+                    icon: bankNorwegian,
                     lender: 'Bank Norwegian',
                     value: 278450,
                     type: 'CreditCard',
                     interestRate: 16
                 },
                 {
-                    icon: '../../icons/dnb.png',
+                    icon: dnb,
                     lender: 'DnB Kreditt',
                     value: 46000,
                     type: 'ConsumerLoan',
                     interestRate: 25
                 },
                 {
-                    icon: null,
+                    icon: klarna,
                     lender: 'Klarna AB',
                     value: 23550,
                     type: 'Credit',
@@ -47,7 +53,8 @@ const analyze = (state = {}, action, payload) => {
             på deg idag, skylder du 593.000 kr. Noe av dette ser ut til å være
             kredittkort og forbrukslån. Scroll nedover for å se hva vi kan gjøre for at
             du skal få litt mer å rutte med hver måned`,
-            graph: {},
+            graph: chart,
+            barChart: barChart,
             assets: 326584
             
         }};
