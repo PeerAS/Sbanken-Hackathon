@@ -6,6 +6,7 @@ import { analyzeUser, getLoans, verifyUser, finishUser, loading, finishedLoading
 import Presentation from './Presentation/Presentation';
 import Result from './Result';
 import loader from './loader.gif';
+import './Wrapper.css';
 
 const mapStateToProps = state => {
     const { loans, analyze, verify, finished, loading} = state;
@@ -43,7 +44,7 @@ class testApp extends Component {
         if(loading)
         {
             setTimeout(()=>{ finishLoading(); }, 2000);
-            return (<img src={loader} />);
+            return (<img className="loader" src={loader} />);
         }
 
         if(data.data === undefined)
