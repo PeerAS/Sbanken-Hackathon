@@ -2,7 +2,7 @@ import React from 'react';
 import dnb from './dnb.png';
 import './Presentation.css';
 
-const Presentation = ({loans, text, name, graph, barGraph}) => {
+const Presentation = ({loans, text, name, graph, barGraph, callback}) => {
     return (<div>
         <h2>Hei, {name}</h2>
         <span>
@@ -35,7 +35,7 @@ const Presentation = ({loans, text, name, graph, barGraph}) => {
             <img src={barGraph} />
         </div>
 
-        <button className="green-button" >Vis meg mer</button>
+        <button className="green-button" onClick={()=>{callback()}} >Vis meg mer</button>
         </div>);
 }
 

@@ -26,6 +26,13 @@ export const verifyUser = (verified) => {
     }
 }
 
+export const finishUser = (finished) => {
+    return {
+        type: "FINISHED",
+        payload: finished
+    }
+}
+
 export const actionTypes = {
     GET_LOANS,
     GET_LOANS_DONE,

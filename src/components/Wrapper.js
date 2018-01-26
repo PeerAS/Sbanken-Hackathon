@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Analyze from './Analyze';
 import Verification from './Verification';
-import { analyzeUser, getLoans, verifyUser } from '../state/actions';
+import { analyzeUser, getLoans, verifyUser, finishUser } from '../state/actions';
 import Presentation from './Presentation/Presentation';
 import Result from './Result';
 
@@ -20,7 +20,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         analyze: () => dispatch(analyzeUser('tester')),
-        verify: () => dispatch(verifyUser(true))
+        verify: () => dispatch(verifyUser(true)),
+        finish: () => dispatch(finishUser(true))
     }
 }
 
@@ -33,7 +34,7 @@ class testApp extends Component {
     }
     render()
     {
-        const  {analyze, data, verified, verify, finished} = this.props;
+        const  {analyze, data, verified, verify, finished, finish} = this.props;
 
         if(data.data === undefined)
         {
@@ -46,7 +47,8 @@ class testApp extends Component {
             return(<Presentation loans={data.data.loans} 
                 text={data.data.text} 
                 graph={data.data.graph} 
-                barGraph={data.data.barChart}/>)
+                barGraph={data.data.barChart}
+                callback={finish}/>)
         }
         else return <Result />
 
