@@ -80,7 +80,8 @@ const analyze = (state = {}, action, payload) => {
 
 const verify = (state = false, action) => {
     switch (action.type) {
-        case "VERIFY_USER": return action.payload;   
+        case "VERIFY_USER": return action.payload;
+        case "LOADING_DONE": return true;   
         default: return state;
     }
 }
@@ -89,7 +90,8 @@ const reducers = combineReducers({
     loans,
     analyze,
     verify,
-    finished
+    finished,
+    loading
 });
 
 export default reducers;

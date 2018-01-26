@@ -42,7 +42,7 @@ class testApp extends Component {
 
         if(loading)
         {
-            setTimeout(()=>{ finishLoading(); }, 1000);
+            setTimeout(()=>{ finishLoading(); }, 2000);
             return (<img src={loader} />);
         }
 
