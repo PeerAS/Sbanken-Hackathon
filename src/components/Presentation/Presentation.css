@@ -8,3 +8,8 @@
     max-width: 60px;
     max-height: 60px;
 }
+.green-button {
+    background-color: #31fcb3;
+    height: 45px;
+    width: 25%;
+}

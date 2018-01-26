@@ -34,6 +34,8 @@ const Presentation = ({loans, text, name, graph, barGraph}) => {
         <div>
             <img src={barGraph} />
         </div>
+
+        <button className="green-button" >Vis meg mer</button>
         </div>);
 }
 

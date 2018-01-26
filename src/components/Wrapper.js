@@ -4,14 +4,16 @@ import Analyze from './Analyze';
 import Verification from './Verification';
 import { analyzeUser, getLoans, verifyUser } from '../state/actions';
 import Presentation from './Presentation/Presentation';
+import Result from './Result';
 
 const mapStateToProps = state => {
-    const { loans, analyze, verify} = state;
+    const { loans, analyze, verify, finished} = state;
 
     return {
         loans,
         data: analyze,
-        verified: verify
+        verified: verify,
+        finished
     }
 };
 
@@ -31,7 +33,7 @@ class testApp extends Component {
     }
     render()
     {
-        const  {analyze, data, verified, verify} = this.props;
+        const  {analyze, data, verified, verify, finished} = this.props;
 
         if(data.data === undefined)
         {
@@ -40,14 +42,15 @@ class testApp extends Component {
         else if(verified !== true){
             return(<Verification verify={verify} />);
         }
-        else  {
+        else if(finished !== true)  {
             return(<Presentation loans={data.data.loans} 
                 text={data.data.text} 
                 graph={data.data.graph} 
                 barGraph={data.data.barChart}/>)
         }
+        else return <Result />
 
-        return(<div>You did it</div>);
+        return(<div>You broke it</div>);
         
     }
 }
