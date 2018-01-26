@@ -1,0 +1,27 @@
+.line {
+    background-color: black;
+    width: 70%;
+    height: 2px;
+}
+
+.resultWrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.resultWrapper h3 {
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.savingsInfo p {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.savingsInfo {
+    display: flex;
+    width: 100%;
+}

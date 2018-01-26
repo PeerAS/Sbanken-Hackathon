@@ -3,12 +3,12 @@ import './verification.css';
 
 const Verification = ({verify}) => {
     return(
-        <div>
+        <div className="verificationWrapper">
             <div id="textBox">
             Lorem ipsum etc etc
             </div>
             <div id="bankIdBod"></div>
-            <div id="verification">
+            <div id="verification" className="verification" >
                 <button className="green-button" onClick={()=>{verify()}}>Verifiser meg</button>
             </div>
         </div>

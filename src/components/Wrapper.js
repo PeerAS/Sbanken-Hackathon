@@ -48,6 +48,7 @@ class testApp extends Component {
                 text={data.data.text} 
                 graph={data.data.graph} 
                 barGraph={data.data.barChart}
+                name={data.data.name}
                 callback={finish}/>)
         }
         else return <Result />

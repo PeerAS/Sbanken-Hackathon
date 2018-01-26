@@ -3,16 +3,16 @@ import dnb from './dnb.png';
 import './Presentation.css';
 
 const Presentation = ({loans, text, name, graph, barGraph, callback}) => {
-    return (<div>
+    return (<div className="presentation">
         <h2>Hei, {name}</h2>
         <span>
             {text}
         </span>
-        <div className="graph">
+        <div>
             <h3>Din økonomi de siste 20 årene</h3>
-            <img src={graph} />
+            <iframe frameBorder={0} className="graph" src={graph} />
         </div>
-        <span>
+        <span className="tableSection">
             <table>
                 <tr>
                     <td></td>
@@ -24,7 +24,7 @@ const Presentation = ({loans, text, name, graph, barGraph, callback}) => {
             {loans.map((loan, index) => {
                 return (<tr key={index}>
                     <td><img className="lenderIcons" src={loan.icon} /></td>
-                    <td>{loan.lender}</td>
+                    <td className="lenderText" >{loan.lender}</td>
                     <td>{loan.interestRate}</td>
                     <td>{loan.value}</td>
                 </tr>)

@@ -1,5 +1,21 @@
 .green-button {
     background-color: #31fcb3;
     height: 45px;
-    width: 25%;
+    width: 50%;
+}
+
+.verificationWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.verification {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }

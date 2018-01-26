@@ -62,7 +62,8 @@ const analyze = (state = {}, action, payload) => {
             du skal få litt mer å rutte med hver måned`,
             graph: chart,
             barChart: barChart,
-            assets: 326584
+            assets: 326584,
+            name: "Peer"
             
         }};
         default: return state;
