@@ -22,6 +22,14 @@ const finished = (state = false, action) => {
     }
 }
 
+const loading = (state = false, action) => {
+    switch (action.type) {
+        case "LOADING": return true;
+        case "LOADING_DONE": return false;
+        default: return false;
+    }
+}
+
 const analyze = (state = {}, action, payload) => {
     switch(action.type) {
         case "ANALYZE": return { data: {

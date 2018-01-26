@@ -4,6 +4,19 @@
     width: 50%;
 }
 
+
+.bankIcons {
+    max-height: 30px;
+    max-width: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bankId {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
 .verificationWrapper {
     display: flex;
     width: 100%;

@@ -26,10 +26,24 @@ export const verifyUser = (verified) => {
     }
 }
 
+export const loading = () => {
+    return {
+        type: "LOADING",
+        payload: true
+    }
+}
+
 export const finishUser = (finished) => {
     return {
         type: "FINISHED",
         payload: finished
+    }
+}
+
+export const finishedLoading = () => {
+    return {
+        type: "LOADING_DONE",
+        payload: false
     }
 }
 

@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Analyze from './Analyze';
 import Verification from './Verification';
-import { analyzeUser, getLoans, verifyUser, finishUser } from '../state/actions';
+import { analyzeUser, getLoans, verifyUser, finishUser, loading, finishedLoading } from '../state/actions';
 import Presentation from './Presentation/Presentation';
 import Result from './Result';
+import loader from './loader.gif';
 
 const mapStateToProps = state => {
-    const { loans, analyze, verify, finished} = state;
+    const { loans, analyze, verify, finished, loading} = state;
 
     return {
         loans,
         data: analyze,
         verified: verify,
-        finished
+        finished,
+        loading
     }
 };
 
@@ -21,7 +23,9 @@ const mapDispatchToProps = dispatch => {
     return {
         analyze: () => dispatch(analyzeUser('tester')),
         verify: () => dispatch(verifyUser(true)),
-        finish: () => dispatch(finishUser(true))
+        finish: () => dispatch(finishUser(true)),
+        startLoading: () => dispatch(loading()),
+        finishLoading: () => dispatch(finishedLoading())
     }
 }
 
@@ -34,14 +38,20 @@ class testApp extends Component {
     }
     render()
     {
-        const  {analyze, data, verified, verify, finished, finish} = this.props;
+        const  {analyze, data, verified, verify, finished, finish, loading, startLoading, finishLoading} = this.props;
+
+        if(loading)
+        {
+            setTimeout(()=>{ finishLoading(); }, 1000);
+            return (<img src={loader} />);
+        }
 
         if(data.data === undefined)
         {
             return(<Analyze callback={analyze} />);
         }
         else if(verified !== true){
-            return(<Verification verify={verify} />);
+            return(<Verification verify={startLoading} />);
         }
         else if(finished !== true)  {
             return(<Presentation loans={data.data.loans} 
